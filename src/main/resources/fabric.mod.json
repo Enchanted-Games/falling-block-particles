@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "falling-block-particles",
+  "version": "${version}",
+  "name": "Falling Block Particles",
+  "description": "Makes falling blocks emit particles, similar to block braking particles, when floating or when on a non-full block.",
+  "authors": ["Enchanted Games"],
+  "contact": {
+    "homepage": "https://github.com/Enchanted-Games/falling-block-particles",
+    "sources": "https://github.com/Enchanted-Games/falling-block-particles",
+    "issues": "https://github.com/Enchanted-Games/falling-block-particles/issues"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/falling-block-particles/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "games.enchanted.fallingBlockParticles.FallingBlockParticlesClient"
+    ]
+  },
+  "mixins": ["falling-block-particles.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": ">=1.20",
+    "java": ">=17"
+  }
+}
