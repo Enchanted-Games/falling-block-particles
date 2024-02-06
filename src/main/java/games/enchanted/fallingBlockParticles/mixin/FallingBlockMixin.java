@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 
 import org.spongepowered.asm.mixin.Mixin;
 
+import games.enchanted.fallingBlockParticles.config.ConfigValues;
 import games.enchanted.fallingBlockParticles.particle.ParticleTypes;
 
 @Mixin(FallingBlock.class)
@@ -22,8 +23,7 @@ public class FallingBlockMixin extends Block implements LandingBlock {
 
 	@Override
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-		//VoxelShape shape = world.getBlockState(pos.down()).getCollisionShape(world, pos);
-		if (random.nextInt(12) == 0 && !Block.hasTopRim(world, pos.down())) {
+		if (random.nextInt(ConfigValues.falling_block_particle__rarity) == 0 && !Block.hasTopRim(world, pos.down())) {
 			double d = (double) pos.getX() + random.nextDouble();
 			double e = (double) pos.getY() - 0.05f;
 			double f = (double) pos.getZ() + random.nextDouble();
