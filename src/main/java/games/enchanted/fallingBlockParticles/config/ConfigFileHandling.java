@@ -3,7 +3,7 @@ package games.enchanted.fallingBlockParticles.config;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import games.enchanted.fallingBlockParticles.libs.nu.studer.OrderedProperties;
+import java.util.Properties;
 
 import games.enchanted.fallingBlockParticles.FallingBlockParticlesClient;
 import games.enchanted.fallingBlockParticles.util.Conversions;
@@ -16,7 +16,7 @@ public class ConfigFileHandling {
     public static final String FBP_SCALE_TIME = "falling_block_particle__scale_time_in_ticks";
     public static final String FBP_SCALE_DELAY = "falling_block_particle__scale_delay_in_ticks";
     
-    private static void writeProperties(OrderedProperties p) {
+    private static void writeProperties(Properties p) {
         p.setProperty(FBP_RARITY, Integer.toString(ConfigValues.falling_block_particle__rarity));
         p.setProperty(FBP_MIN_TICK_AGE, Integer.toString(ConfigValues.falling_block_particle__minAgeInTicks));
         p.setProperty(FBP_MAX_TICK_AGE, Integer.toString(ConfigValues.falling_block_particle__maxAgeInTicks));
@@ -24,7 +24,7 @@ public class ConfigFileHandling {
         p.setProperty(FBP_SCALE_DELAY, Integer.toString(ConfigValues.falling_block_particle__scaleDelayInTicks));
     }
 
-    private static void setConfigFromProperties(OrderedProperties p) {
+    private static void setConfigFromProperties(Properties p) {
         ConfigValues.falling_block_particle__rarity = Conversions.defaultedStringToInt(getProperty(p, FBP_RARITY), DefaultConfigValues.falling_block_particle__rarity);
         ConfigValues.falling_block_particle__minAgeInTicks = Conversions.defaultedStringToInt(getProperty(p, FBP_MIN_TICK_AGE), ConfigValues.falling_block_particle__minAgeInTicks);
         ConfigValues.falling_block_particle__maxAgeInTicks = Conversions.defaultedStringToInt(getProperty(p, FBP_MAX_TICK_AGE), ConfigValues.falling_block_particle__maxAgeInTicks);
@@ -35,7 +35,7 @@ public class ConfigFileHandling {
 
     // Call loadConfig before saving in onInitialize!
     public static void saveConfig() {
-        OrderedProperties configProperties = new OrderedProperties();
+        Properties configProperties = new Properties();
         Path configFilePath = FabricLoader.getInstance().getConfigDir().resolve(FallingBlockParticlesClient.CONFIG_FILE_NAME);
 
         writeProperties(configProperties);
@@ -61,7 +61,7 @@ public class ConfigFileHandling {
     }
     
     public static void loadConfig() {
-        OrderedProperties configProperties = new OrderedProperties();
+        Properties configProperties = new Properties();
         Path configFilePath = FabricLoader.getInstance().getConfigDir().resolve(FallingBlockParticlesClient.CONFIG_FILE_NAME);
 
         // save defaults if no config exists
@@ -81,7 +81,7 @@ public class ConfigFileHandling {
         setConfigFromProperties(configProperties);
     }
     
-    private static String getProperty(OrderedProperties p, String property) {
+    private static String getProperty(Properties p, String property) {
         String prop = p.getProperty(property);
         return prop == null ? "" : prop;
     }

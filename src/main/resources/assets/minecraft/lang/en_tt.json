@@ -1,0 +1,18 @@
+{
+  "falling-block-particles.config.title": "Falling Block Particles Config",
+
+  "falling-block-particles.config.category.particles": "Particles",
+
+  "falling-block-particles.config.group.falling_block_particle": "Falling Block Dust Particle",
+
+  "falling-block-particles.config.group.falling_block_particle.option.rarity": "Particle Rarity",
+  "falling-block-particles.config.group.falling_block_particle.option.rarity.desc": "Adjust the chance for particles to spawn from the bottom of FallingBlocks.\nHigher values make less particles spawn, lower values make more particles spawn",
+  "falling-block-particles.config.group.falling_block_particle.option.minAgeInTicks": "Minimum Lifespan (Ticks)",
+  "falling-block-particles.config.group.falling_block_particle.option.minAgeInTicks.desc": "Minimum time particles can live for.\nFinal value is chosen randomly between Minimum Lifespan and Maximum Lifespan",
+  "falling-block-particles.config.group.falling_block_particle.option.maxAgeInTicks": "Maximum Lifespan (Ticks)",
+  "falling-block-particles.config.group.falling_block_particle.option.maxAgeInTicks.desc": "Maximum time particles can live for.\nFinal value is chosen randomly between Minimum Lifespan and Maximum Lifespan",
+  "falling-block-particles.config.group.falling_block_particle.option.scaleTimeInTicks": "Scale Duration (Ticks)",
+  "falling-block-particles.config.group.falling_block_particle.option.scaleTimeInTicks.desc": "The time it takes for particles to shrink and disappear when landing on the ground",
+  "falling-block-particles.config.group.falling_block_particle.option.scaleDelayInTicks": "Scale Delay (Ticks)",
+  "falling-block-particles.config.group.falling_block_particle.option.scaleDelayInTicks.desc": "Delay before particles will shrink after landing on the ground"
+}
