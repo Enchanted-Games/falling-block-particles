@@ -2,7 +2,7 @@
   "required": true,
   "package": "games.enchanted.fallingBlockParticles.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": ["FallingBlockMixin"],
+  "client": ["FallingBlockMixin"],
   "injectors": {
     "defaultRequire": 1
   }
